@@ -4,23 +4,19 @@ import "../styles/PhotoList.scss";
 import PhotoListItem from "./PhotoListItem";
 
 const PhotoList = (props) => {
-  const list = [];
-  const length = props.photos.length;
 
-  for (let i = 0; i < length; i++) {
-    const photo = props.photos[i];
-    list.push(
-      <li key={photo.id}>
-        <PhotoListItem
-          username={photo.username}
-          imageSource={photo.imageSource}
-          hideUserName={photo.hideUserName}
-        />
-      </li>
-    );
-  }
+  const PhotoListComponentsArr =  props.photos.map((photo) => {
+    return (
+    <PhotoListItem
+      key={photo.id}
+      username={photo.username}
+      imageSource={photo.imageSource}
+      hideUserName={photo.hideUserName}
+    />
+  )
+  })
 
-  return <ul className="photo-list">{list}</ul>;
+  return <ul className="photo-list">{PhotoListComponentsArr}</ul>;
 };
 
 PhotoList.defaultProps = {
