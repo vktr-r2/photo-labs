@@ -1,17 +1,31 @@
+import React from "react";
 
-import React from 'react';
+import "../styles/PhotoListItem.scss";
 
-import '../styles/PhotoListItem.scss';
+const PhotoListItem = (props) => {
+  const { imageSource, username, id, hideUserName } = props;
 
-const PhotoListItem = () => {
-  /* Insert React */
-}
+  return (
+    <div className="photo-list--item">
+      <img
+        id={id}
+        // hideUserName={hideUserName}
+        src={imageSource}
+        alt="photo-description"
+        className="photo-list--image"
+      />
+      <p className="photo-list--user-profile photo-list--user-info">
+        {username}
+      </p>
+    </div>
+  );
+};
 
-PhotoListItem.defaultProps = {
-  username: 'Jacob',
-  imageSource: `${process.env.PUBLIC_URL}/Image.jpg`,
-  id: 1,
-  hideUserName: false,
-}
+// PhotoListItem.defaultProps = {
+//   username: "Jacob",
+//   imageSource: `${process.env.PUBLIC_URL}/Image.jpg`,
+//   id: 1,
+//   hideUserName: false,
+// };
 
-export default PhotoListItem
+export default PhotoListItem;

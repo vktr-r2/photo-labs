@@ -1,10 +1,11 @@
 .photo-list--item {
+  background-color: #9DC3C2;
   margin: 24px;
   padding: 8px;
   border-width: 0.5px;
-  border-color: lightgray;
+  border-color: 4D7298;
   border-style: solid;
-  border-radius: 8px;
+  border-radius: 16px;
   max-width: fit-content;
 }
 
@@ -21,6 +22,7 @@
   width: 300px;
   height: 200px;
   object-fit: cover;
+  border-color: 4D7298;
 }
 
 .photo-list--user-profile {

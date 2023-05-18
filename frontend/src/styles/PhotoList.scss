@@ -1,6 +1,8 @@
 .photo-list {
   display: flex;
   flex-wrap: wrap;
+  border-radius: 16px;
+  background-color: #77A6B6;
   justify-content: space-between;
   list-style-type: none;
   margin: 0;
