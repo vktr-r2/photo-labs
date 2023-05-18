@@ -1,12 +1,14 @@
 import React from "react";
 
 import "../styles/PhotoListItem.scss";
+import PhotoFavButton from "./PhotoFavButton";
 
 const PhotoListItem = (props) => {
   const { imageSource, username, id, hideUserName } = props;
 
   return (
     <div className="photo-list--item">
+      <PhotoFavButton/>
       <img
         id={id}
         // hideUserName={hideUserName}
