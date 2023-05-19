@@ -35,6 +35,16 @@ TopicList.defaultProps = {
       label: "People",
       link: "link placeholder",
     },
+    {
+      id: 4,
+      label: "Places",
+      link: "link placeholder",
+    },
+    {
+      id: 5,
+      label: "Backgrounds",
+      link: "link placeholder",
+    },
   ],
 };
 export default TopicList;
