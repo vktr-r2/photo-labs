@@ -8,12 +8,14 @@ import TopicList from './components/TopicList';
 import TopNavigation from './components/TopNavigationBar';
 import HomeRoute from './routes/HomeRoute';
 
-
+import topics from './mocks/topics.json';
+import photos from './mocks/photos.json';
 
 import './App.scss';
 
 // Note: Rendering a single component to build components in isolation
 const App = () => {
+
   return (
   <div className="App">
     {/* <PhotoListItem/> */}
@@ -22,7 +24,7 @@ const App = () => {
     {/* <TopicList/> */}
     {/* <TopNavigation/> */}
     {/* <PhotoList/> */}
-    <HomeRoute/>
+    <HomeRoute topics={topics} photos={photos}/>
 
   </div>
 )}
