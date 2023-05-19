@@ -4,24 +4,29 @@ import "../styles/PhotoList.scss";
 import PhotoListItem from "./PhotoListItem";
 
 const PhotoList = (props) => {
-  
-  console.log(props.photos)
+  //Receive photos data, favPhotos state, and add/removeFavPhoto update functions as props from HomeRoute parent
+  const { photos, favPhotos, addFavPhoto, removeFavPhoto } = props;
 
-  const PhotoListComponentsArr =  props.photos.map((photo) => {
+  //Declare new PhotoListComponentsArr, check if photos is array, if true then use .map to create each PhotoListItem component
+  const PhotoListComponentsArr = Array.isArray(photos) && photos.map((photo) => {
     return (
-    <PhotoListItem
-      key={photo.id}
-      username={photo.user.username}
-      imageSource={photo.urls.regular}
-      hideUserName={photo.hideUserName}
-    />
-  )
-  })
-  
+      <PhotoListItem
+        key={photo.id}
+        username={photo.user.username}
+        imageSource={photo.urls.regular}
+        hideUserName={photo.hideUserName}
+        isFav={favPhotos[photo.id]} // Boolean indicating whether photo is favourited based on whether photo.id exists in favPhotos obj
+        onFavClick={() => addFavPhoto(photo.id)} // Pass function with photo.id as arg to addFavPhoto
+        onUnFavClick={() => removeFavPhoto(photo.id)} // Pass function with photo.id as arg to removeFavPhoto
+      />
+    )
+  });
+
   return <ul className="photo-list">{PhotoListComponentsArr}</ul>;
 };
 
 export default PhotoList;
+
 
 // {
 //   "id": "Dwu85P9SOIk1",
