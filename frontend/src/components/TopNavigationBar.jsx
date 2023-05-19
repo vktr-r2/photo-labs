@@ -6,6 +6,8 @@ import TopicList from './TopicList';
 
 const TopNavigation = (props) => {
 
+  const {favPhotos} = props;
+
   // console.log(props.topics); //confirmed topics array received 
 
   return (
@@ -14,7 +16,7 @@ const TopNavigation = (props) => {
 
       <div className="top-nav-bar--links">
       <TopicList topics={props.topics}/>
-      <FavBadge/>
+      <FavBadge favPhotos={favPhotos}/>
       </div>
     </div>
   )
