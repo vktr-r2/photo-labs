@@ -4,11 +4,11 @@ import "../styles/PhotoListItem.scss";
 import PhotoFavButton from "./PhotoFavButton";
 
 const PhotoListItem = (props) => {
-  const { imageSource, username, id, hideUserName, incrementFavCount} = props;
+  const { imageSource, username, id, hideUserName } = props;
 
   return (
     <div className="photo-list--item">
-      <PhotoFavButton incrementFavCount={incrementFavCount}/>
+      <PhotoFavButton/>
       <img
         id={id}
         // hideUserName={hideUserName}
