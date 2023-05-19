@@ -4,16 +4,19 @@ import "../styles/PhotoListItem.scss";
 import PhotoFavButton from "./PhotoFavButton";
 
 const PhotoListItem = (props) => {
-  const { imageSource, username, id, hideUserName } = props;
+  const { imageSource, username, id, description, isFav, onFavClick, onUnFavClick } = props;
 
   return (
     <div className="photo-list--item">
-      <PhotoFavButton/>
+      <PhotoFavButton
+        isFav={isFav} //Boolean set in PhotoList
+        onFavClick={onFavClick}  //handler functions for favouriting/unfavouriting a photo
+        onUnFavClick={onUnFavClick}
+      />
       <img
         id={id}
-        // hideUserName={hideUserName}
         src={imageSource}
-        alt="photo-description"
+        alt={description}
         className="photo-list--image"
       />
       <p className="photo-list--user-profile photo-list--user-info">
@@ -23,6 +26,9 @@ const PhotoListItem = (props) => {
   );
 };
 
+export default PhotoListItem;
+
+
 // PhotoListItem.defaultProps = {
 //   username: "Jacob",
 //   imageSource: `${process.env.PUBLIC_URL}/Image.jpg`,
@@ -30,4 +36,3 @@ const PhotoListItem = (props) => {
 //   hideUserName: false,
 // };
 
-export default PhotoListItem;
