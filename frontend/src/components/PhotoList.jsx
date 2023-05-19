@@ -7,7 +7,7 @@ const PhotoList = (props) => {
   //Receive photos data, favPhotos state, and add/removeFavPhoto update functions as props from HomeRoute parent
   const { photos, favPhotos, addFavPhoto, removeFavPhoto } = props;
 
-  //Declare new PhotoListComponentsArr, check if photos is array, if true then use .map to create each PhotoListItem component
+  //Declare new PhotoListComponentsArr, check if "photos" is array, if true then use .map to create each PhotoListItem component
   const PhotoListComponentsArr = Array.isArray(photos) && photos.map((photo) => {
     return (
       <PhotoListItem
