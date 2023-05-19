@@ -4,8 +4,7 @@ import "../styles/PhotoList.scss";
 import PhotoListItem from "./PhotoListItem";
 
 const PhotoList = (props) => {
-  
-  console.log(props.photos)
+
 
   const PhotoListComponentsArr =  props.photos.map((photo) => {
     return (
@@ -14,6 +13,7 @@ const PhotoList = (props) => {
       username={photo.user.username}
       imageSource={photo.urls.regular}
       hideUserName={photo.hideUserName}
+      incrementFavCount={props.incrementFavCount}
     />
   )
   })

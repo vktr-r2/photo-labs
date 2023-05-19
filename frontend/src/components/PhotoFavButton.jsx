@@ -7,7 +7,9 @@ import { FavIcon } from './FavIcon';
 
 import '../styles/PhotoFavButton.scss';
 
-function PhotoFavButton() {
+function PhotoFavButton(props) {
+
+  const {incrementFavCount} = props;
 
   // This is a state hook, which creates a state variable 'filled' and its associated setter 'setFilled'. 
   // The initial value of 'filled' is false, indicating the heart is not filled.
@@ -19,6 +21,7 @@ function PhotoFavButton() {
   const handleClick = useCallback(() => {
     // The handleClick function is toggling the value of 'filled' to the opposite of its current state,
     setFilled((prevFilled) => !prevFilled);
+    incrementFavCount();
   }, []);
 
   // fillColor is defined based on the value of 'filled'. 
