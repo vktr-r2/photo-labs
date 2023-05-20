@@ -7,7 +7,7 @@ import PhotoList from "../components/PhotoList";
 //HomeRoute takes props topics and photos data from App.jsx
 const HomeRoute = (props) => {
   //Destructure data into variables
-  const { topics, photos } = props;
+  const { topics, photos, onPhotoClick } = props;
 
   // set useState to empty obj | assign empty obj state to favPhotos | declare setFavPhotos function to update state
   const [favPhotos, setFavPhotos] = useState({});
@@ -49,6 +49,8 @@ const HomeRoute = (props) => {
         favPhotos={favPhotos}
         addFavPhoto={addFavPhoto}
         removeFavPhoto={removeFavPhoto}
+        onPhotoClick={onPhotoClick}
+
       />
     </div>
   );
