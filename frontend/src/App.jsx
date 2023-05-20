@@ -28,6 +28,11 @@ const App = () => {
     // console.log(photoProps) //TEST to see if handlePhotoClick is being passed photoProps arg successfully - WORKS
   };
 
+  const closeModal = () => {
+    setShowModal(false);
+    setClickedPhoto(null);
+  };
+
 
 
   return (
@@ -40,7 +45,7 @@ const App = () => {
     {/* <PhotoList/> */}
     <HomeRoute topics={topics} photos={photos} onPhotoClick={handlePhotoClick}/>
     {/*Conditional checks if showModal true, if true render modal*/ }
-    {showModal && <PhotoDetailsModal photo={clickedPhoto} />}
+    {showModal && <PhotoDetailsModal photo={clickedPhoto} onClose={closeModal}/>}
 
   </div>
 )}
