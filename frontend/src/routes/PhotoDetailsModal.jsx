@@ -40,6 +40,8 @@ export const PhotoDetailsModal = (props) => {
           </defs>
         </svg>
       </button>
+      <img src={photo.imageSource} alt={photo.description} className="photo-details-modal--image"/>
+      <h1>Photo Info Here</h1>
     </div>
   );
 };
