@@ -50,7 +50,6 @@ const HomeRoute = (props) => {
         addFavPhoto={addFavPhoto}
         removeFavPhoto={removeFavPhoto}
         onPhotoClick={onPhotoClick}
-
       />
     </div>
   );
