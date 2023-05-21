@@ -3,30 +3,33 @@ import React from "react";
 import "../styles/PhotoDetailsModal.scss";
 import PhotoList from "../components/PhotoList";
 import PhotoListItem from "../components/PhotoListItem";
+import PhotoFavButton from "../components/PhotoFavButton";
 
 export const PhotoDetailsModal = (props) => {
 
-  const {onClose, clickedPhoto, photos} = props;
+  const {onClose, clickedPhoto, photos, favPhotos, addFavPhoto, removeFavPhoto, onPhotoClick} = props;
+
 
   // console.log(clickedPhoto);  // TEST to see if component receiving clickedPhoto data >> WORKING
-  console.log(photos); // TEST to see if component receiving all photo data >> WORKING
+  // console.log("photos :", photos); // TEST to see if component receiving all photo data >> WORKING
 
   const PhotoListComponentsArr = Array.isArray(photos) && photos.map((photo) => {
-    return (
-      <PhotoListItem
-        id={photo.id}
-        key={photo.id}
-        username={photo.user.username}
-        imageSource={photo.urls.thumb}
-        description={photo.description}
-        className=".photo-details-modal--images"
-        isFav={favPhotos[photo.id]} // Boolean indicating whether photo is favourited based on whether photo.id exists in favPhotos obj
-        onFavClick={() => addFavPhoto(photo.id)} // Pass function with photo.id as arg to addFavPhoto
-        onUnFavClick={() => removeFavPhoto(photo.id)} // Pass function with photo.id as arg to removeFavPhoto
-        onPhotoClick={onPhotoClick}
-      />
-    )
-  });
+    if (photo.id !== clickedPhoto.id) {    //if statement prevents clickedPhoto from populating the similar photos displayed
+      return (
+        <PhotoListItem
+            id={photo.id}
+            key={photo.id}
+            username={photo.user.username}
+            imageSource={photo.urls.thumb}
+            description={photo.description}
+            className=".photo-details-modal--images"
+            isFav={favPhotos[photo.id]} // Boolean indicating whether photo is favorited based on whether photo.id exists in favPhotos obj
+            onFavClick={() => addFavPhoto(photo.id)} // Pass function with photo.id as arg to addFavPhoto
+            onUnFavClick={() => removeFavPhoto(photo.id)} // Pass function with photo.id as arg to removeFavPhoto
+        />
+    )}
+});
+
 
   // console.log(PhotoListComponentsArr);
   
@@ -62,6 +65,11 @@ export const PhotoDetailsModal = (props) => {
           </defs>
         </svg>
       </button>
+      <PhotoFavButton
+        isFav={favPhotos[clickedPhoto.id]}
+        onFavClick={() => addFavPhoto(clickedPhoto.id)}
+        onUnFavClick={() => removeFavPhoto(clickedPhoto.id)}
+      />
       <img src={clickedPhoto.imageSource} alt={clickedPhoto.description} className="photo-details-modal--image"/>
       <h3 className=".photo-details-modal--header">Similar Photos</h3>
       <PhotoList>{PhotoListComponentsArr}</PhotoList>

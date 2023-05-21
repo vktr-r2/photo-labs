@@ -85,7 +85,17 @@ const removeFavPhoto = (photoId) => {
         removeFavPhoto={removeFavPhoto} 
       />
     {/*Conditional checks if showModal true, if true render modal*/ }
-    {showModal && <PhotoDetailsModal clickedPhoto={clickedPhoto} onClose={closeModal} photos={photos} />}
+    {showModal && 
+    <PhotoDetailsModal 
+        clickedPhoto={clickedPhoto} 
+        onClose={closeModal} 
+        photos={photos}
+        favPhotos={favPhotos} 
+        addFavPhoto={addFavPhoto} 
+        removeFavPhoto={removeFavPhoto} 
+        onPhotoClick={handlePhotoClick} 
+    />
+}
 
   </div>
 )}
