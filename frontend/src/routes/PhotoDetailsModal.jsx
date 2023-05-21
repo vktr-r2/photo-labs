@@ -1,12 +1,34 @@
 import React from "react";
 
 import "../styles/PhotoDetailsModal.scss";
+import PhotoList from "../components/PhotoList";
+import PhotoListItem from "../components/PhotoListItem";
 
 export const PhotoDetailsModal = (props) => {
 
-  const {onClose, photo} = props;
+  const {onClose, clickedPhoto, photos} = props;
 
-  console.log(photo);
+  // console.log(clickedPhoto);  // TEST to see if component receiving clickedPhoto data >> WORKING
+  console.log(photos); // TEST to see if component receiving all photo data >> WORKING
+
+  const PhotoListComponentsArr = Array.isArray(photos) && photos.map((photo) => {
+    return (
+      <PhotoListItem
+        id={photo.id}
+        key={photo.id}
+        username={photo.user.username}
+        imageSource={photo.urls.thumb}
+        description={photo.description}
+        className=".photo-details-modal--images"
+        isFav={favPhotos[photo.id]} // Boolean indicating whether photo is favourited based on whether photo.id exists in favPhotos obj
+        onFavClick={() => addFavPhoto(photo.id)} // Pass function with photo.id as arg to addFavPhoto
+        onUnFavClick={() => removeFavPhoto(photo.id)} // Pass function with photo.id as arg to removeFavPhoto
+        onPhotoClick={onPhotoClick}
+      />
+    )
+  });
+
+  // console.log(PhotoListComponentsArr);
   
   return (
     <div className="photo-details-modal">
@@ -40,8 +62,9 @@ export const PhotoDetailsModal = (props) => {
           </defs>
         </svg>
       </button>
-      <img src={photo.imageSource} alt={photo.description} className="photo-details-modal--image"/>
-      <h1>Photo Info Here</h1>
+      <img src={clickedPhoto.imageSource} alt={clickedPhoto.description} className="photo-details-modal--image"/>
+      <h3 className=".photo-details-modal--header">Similar Photos</h3>
+      <PhotoList>{PhotoListComponentsArr}</PhotoList>
     </div>
   );
 };
