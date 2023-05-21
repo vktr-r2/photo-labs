@@ -26,6 +26,7 @@ export const PhotoDetailsModal = (props) => {
             isFav={favPhotos[photo.id]} // Boolean indicating whether photo is favorited based on whether photo.id exists in favPhotos obj
             onFavClick={() => addFavPhoto(photo.id)} // Pass function with photo.id as arg to addFavPhoto
             onUnFavClick={() => removeFavPhoto(photo.id)} // Pass function with photo.id as arg to removeFavPhoto
+            isClickable={false} // Prevents onClick function from being called if photo clicked within the modal (prevents error in console)
         />
     )}
 });

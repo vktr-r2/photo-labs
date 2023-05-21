@@ -13,6 +13,7 @@ const PhotoListItem = (props) => {
     onFavClick,
     onUnFavClick,
     onPhotoClick,
+    isClickable = true //Ensures onClick listener function will be called
   } = props;
 
   return (
@@ -27,7 +28,7 @@ const PhotoListItem = (props) => {
         src={imageSource}
         alt={description}
         className="photo-list--image"
-        onClick={() => onPhotoClick(props)}
+        onClick={() => isClickable && onPhotoClick(props)}
       />
       <p className="photo-list--user-profile photo-list--user-info">
         {username}

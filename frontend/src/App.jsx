@@ -93,7 +93,7 @@ const removeFavPhoto = (photoId) => {
         favPhotos={favPhotos} 
         addFavPhoto={addFavPhoto} 
         removeFavPhoto={removeFavPhoto} 
-        onPhotoClick={handlePhotoClick} 
+        // onPhotoClick={handlePhotoClick} 
     />
 }
 
