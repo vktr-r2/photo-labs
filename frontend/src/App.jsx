@@ -45,7 +45,7 @@ const App = () => {
     {/* <PhotoList/> */}
     <HomeRoute topics={topics} photos={photos} onPhotoClick={handlePhotoClick}/>
     {/*Conditional checks if showModal true, if true render modal*/ }
-    {showModal && <PhotoDetailsModal photo={clickedPhoto} onClose={closeModal}/>}
+    {showModal && <PhotoDetailsModal clickedPhoto={clickedPhoto} onClose={closeModal} photos={photos} />}
 
   </div>
 )}
