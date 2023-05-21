@@ -13,25 +13,58 @@ import topics from './mocks/topics.json';
 import photos from './mocks/photos.json';
 
 import './App.scss';
-
 const App = () => {
 
-  //State controls whether modal should be active or not
+  //showModal boolean state, handles if PhotoDetailsModal should render or not
   const [showModal, setShowModal] = useState(false);
-  //State controls the photo data that will be passed to the modal
+  //clickedPhoto stores photo data for which photo is clicked, intended to be passed to PhotoDetailsModal
   const [clickedPhoto, setClickedPhoto] = useState(null);
-
-  //Function to be drilled down to PhotoListItem component, captures photoProps of photo that is clicked and sets showModal to TRUE
+  //favPhotos object intended to store which photos have been favourited.  Object properties formatted as [photo.id=TRUE]
+  const [favPhotos, setFavPhotos] = useState({});
+  
+  //handePhotoClick uses photoProps of the clicked photo to capture photo details that need to be passed to PDModal
   const handlePhotoClick = (photoProps) => {
+    //Change clickedPhoto state to the props captured by click
     setClickedPhoto(photoProps);
+    //Change showModal boolean to TRUE to render component
     setShowModal(true);
-    // console.log(photoProps) //TEST to see if handlePhotoClick is being passed photoProps arg successfully - WORKS
   };
 
-  const closeModal = () => {
+  // closeModal triggered on 'x' button click in the modal
+  const closeModal = () => {  
+    //showModal state set to FALSE so modal no longer rendered
     setShowModal(false);
+    //empty the clickedPhoto state so no issues caused on next click of any photo
     setClickedPhoto(null);
   };
+
+  // addFavPhoto takes a photoId as its arg and adds the photoId to favPhotos state
+  const addFavPhoto = (photoId) => {
+    //prevFavPhotos equals the current state of favPhotos object (default functionality from setFavPhotos)
+    setFavPhotos((prevFavPhotos) => {
+      //updatedFavPhotos equals a copy of prevFavPhotos(current state) and adds [photoId] (from the liked photo):true property to signal that the photo is favourited
+      const updatedFavPhotos = { ...prevFavPhotos, [photoId]: true };
+      // console.log(updatedFavPhotos); // TEST Print updated state of favPhotos after favouriting a photo (WORKS)
+      //return updatedFavPhotos as the new state for favPhotos
+      return updatedFavPhotos;
+    });
+  };
+
+
+// removeFavPhoto takes a photoId as arg and removes the photoId key:value property from favPhoto state obj
+const removeFavPhoto = (photoId) => {
+  ////prevFavPhotos equals the current state of favPhotos object
+  setFavPhotos((prevFavPhotos) => {
+    //Make a copy of current favPhotos object using spread operator
+    const updatedFavPhotos = { ...prevFavPhotos };
+    //Remove the key:value property associated with the photoId arguement
+    delete updatedFavPhotos[photoId];
+    // console.log(updatedFavPhotos); // TEST Print updated state of favPhotos after UNfavouriting a photo (WORKS)
+    //return updatedFavPhotos as the new state for favPhotos
+    return updatedFavPhotos;
+  });
+};
+
 
 
 
@@ -43,7 +76,14 @@ const App = () => {
     {/* <TopicList/> */}
     {/* <TopNavigation/> */}
     {/* <PhotoList/> */}
-    <HomeRoute topics={topics} photos={photos} onPhotoClick={handlePhotoClick}/>
+    <HomeRoute 
+        topics={topics} 
+        photos={photos} 
+        onPhotoClick={handlePhotoClick} 
+        favPhotos={favPhotos} 
+        addFavPhoto={addFavPhoto} 
+        removeFavPhoto={removeFavPhoto} 
+      />
     {/*Conditional checks if showModal true, if true render modal*/ }
     {showModal && <PhotoDetailsModal clickedPhoto={clickedPhoto} onClose={closeModal} photos={photos} />}
 
