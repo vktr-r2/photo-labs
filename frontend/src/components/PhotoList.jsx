@@ -23,8 +23,8 @@ const PhotoList = (props) => {
       />
     )
   });
-
-  return <ul className="photo-list">{PhotoListComponentsArr}</ul>;
+  //props.children rendered here so PhotoList can render photos in PhotoDetailsModal.jsx
+  return <ul className="photo-list">{props.children || PhotoListComponentsArr}</ul>;
 };
 
 export default PhotoList;
