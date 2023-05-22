@@ -13,7 +13,7 @@ export const ACTIONS = {
 };
 
 //Reducer takes the current state object as an arguement (object stores all different states for our app) and an action object as well, which is expected to have a "type" property.  "action" parameter describes the change we need to apply to the state
-function reducer(state, action) {
+const reducer = (state, action) => {
 
   //Switch/case statement acts as a giant IF/ELSE statement.  It checks the value of action.type property, and will return what changes need to be applied to the state object based on the value given.
   switch (action.type) {
@@ -44,7 +44,23 @@ function reducer(state, action) {
       //Return a copy of the current state object, and set favPhotos object within it to equal new updatedFavPhotos
       return {...state, favPhotos: updatedFavPhotos}
     
+      //Catches all action.types that have not had cases defined for them above
     default:
       throw new Error (`Unable to reduce with unsupported action type: ${action.type}`);
   }
+}
+
+const useApplicationData = () => {
+  
+  const initialState = {
+    showModal: false,
+    clickedPhoto: null,
+    favPhotos: {},
+    topicsData: topics,
+    photosData: photos
+  };
+
+  //INSERT STATE AND DISPATCH LOGIC HERE 
+
+
 }
