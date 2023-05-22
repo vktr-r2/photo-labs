@@ -52,6 +52,7 @@ const reducer = (state, action) => {
 
 const useApplicationData = () => {
   
+  //initialState object stores the default state for all states
   const initialState = {
     showModal: false,
     clickedPhoto: null,
@@ -60,7 +61,24 @@ const useApplicationData = () => {
     photosData: photos
   };
 
-  //INSERT STATE AND DISPATCH LOGIC HERE 
+  //Destructuring state, dispatch values from the array that useReducer returns
+  const [state, dispatch] = useReducer(reducer,initialState);
+
+  // Define a function called handlePhotoClick, which accepts an argument named photoProps
+  const handlePhotoClick = (photoProps) => {
+    // dispatch call triggers an action in the reducer function
+    // SET_CLICKED_PHOTO sets value of clickedPhoto state in initialState obj to equal props from clicked photo
+    // photoProps payload captured by onClick listener set on the <img> element in PhotoListItem component
+    dispatch({ type: ACTIONS.SET_CLICKED_PHOTO, payload: photoProps});
+    //SHOW_MODAL sets showModal value to TRUE in PhotoListItem
+    dispatch({ type: ACTIONS.SHOW_MODAL});
+  };
+
+  const closeModal = () => {
+    //CLOSE_MODAL sets showModal to FALSE< and clickedPhoto to NULL
+    dispatch({type: ACTIONS.CLOSE_MODAL});
+  };
+
 
 
 }
