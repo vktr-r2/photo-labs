@@ -1,5 +1,9 @@
 import { useState } from 'react';
 
+//Import mock data from JSON files
+import topics from '../mocks/topics.json';
+import photos from '../mocks/photos.json';
+
 const useApplicationData = () => {
   // showModal boolean state, handles if PhotoDetailsModal should render or not
   const [showModal, setShowModal] = useState(false);
@@ -9,6 +13,10 @@ const useApplicationData = () => {
 
   // favPhotos object intended to store which photos have been favourited.  Object properties formatted as [photo.id=TRUE]
   const [favPhotos, setFavPhotos] = useState({});
+
+  // set mock data states to be passed down through components
+  const [topicsData, setTopicsData] = useState(topics);
+  const [photosData, setPhotosData] = useState(photos);
 
   // handePhotoClick uses photoProps of the clicked photo to capture photo details that need to be passed to PDModal
   const handlePhotoClick = (photoProps) => {
@@ -58,6 +66,8 @@ const useApplicationData = () => {
     closeModal,
     addFavPhoto,
     removeFavPhoto,
+    topicsData,
+    photosData,
   };
 };
 
