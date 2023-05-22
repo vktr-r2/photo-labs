@@ -64,10 +64,10 @@ const useApplicationData = () => {
   //Destructuring state, dispatch values from the array that useReducer returns
   const [state, dispatch] = useReducer(reducer,initialState);
 
-  // Define a function called handlePhotoClick, which accepts an argument named photoProps
+  //handlePhotoClick accepts photoProps as argument
   const handlePhotoClick = (photoProps) => {
     // dispatch call triggers an action in the reducer function
-    // SET_CLICKED_PHOTO sets value of clickedPhoto state in initialState obj to equal props from clicked photo
+    // SET_CLICKED_PHOTO sets value of clickedPhoto state in initialState obj to equal photoProps from clicked photo
     // photoProps payload captured by onClick listener set on the <img> element in PhotoListItem component
     dispatch({ type: ACTIONS.SET_CLICKED_PHOTO, payload: photoProps});
     //SHOW_MODAL sets showModal value to TRUE in PhotoListItem
@@ -79,6 +79,17 @@ const useApplicationData = () => {
     dispatch({type: ACTIONS.CLOSE_MODAL});
   };
 
+  //accepts photoId from props passed up from photo where the favourite icon is clicked
+  const addFavPhoto = (photoId) => {
+    //ADD_FAV_PHOTO adds a property to the favPhotos obj formatted as "[photoId]: true"
+    dispatch({type: ACTIONS.ADD_FAV_PHOTO, payload: photoId});
+  };
+
+  //accepts photoId from props passed up from photo where the favourite icon is clicked
+  const removeFavPhoto = (photoId) => {
+    //REMOVE_FAV_PHOTO deletes property from favPhotos obj where key matches the photoID arguement received
+    dispatch({type: ACTIONS.REMOVE_FAV_PHOTO, payload: photoId});
+  };
 
 
 }
