@@ -25,10 +25,11 @@
   "user": {
     "id": "QPxL2MGqfrw",
     "updated_at": "2016-07-10T11:00:01-05:00",
-    "username": "exampleuser",
+    "username": "Batman",
     "name": "Joe Example",
     "portfolio_url": "https://example.com/",
-    "bio": "Just an everyday Joe"
+    "bio": "Just an everyday Joe",
+    "avatar": "https://i.pinimg.com/736x/bd/5b/b2/bd5bb261efbd0f67d11eac32765a63e0.jpg"
   }
   },{
     "id": "Dwu85P9SOIk2",
@@ -56,10 +57,11 @@
     "user": {
       "id": "QPxL2MGqfrw",
       "updated_at": "2016-07-10T11:00:01-05:00",
-      "username": "exampleuser",
+      "username": "LunaBaby",
       "name": "Joe Example",
       "portfolio_url": "https://example.com/",
-      "bio": "Just an everyday Joe"
+      "bio": "Just an everyday Joe",
+      "avatar": "https://www.clipartmax.com/png/small/72-722180_these-are-some-cats-avatar-i-drew-during-my-free-time-black.png"
     }
   },
   {
@@ -91,7 +93,8 @@
       "username": "exampleuser",
       "name": "Joe Example",
       "portfolio_url": "https://example.com/",
-      "bio": "Just an everyday Joe"
+      "bio": "Just an everyday Joe",
+      "avatar": "https://cdn4.iconfinder.com/data/icons/avatars-xmas-giveaway/128/batman_hero_avatar_comics-512.png"
     }
   },
   {
@@ -123,7 +126,8 @@
       "username": "exampleuser",
       "name": "Joe Example",
       "portfolio_url": "https://example.com/",
-      "bio": "Just an everyday Joe"
+      "bio": "Just an everyday Joe",
+      "avatar": "https://cdn4.iconfinder.com/data/icons/avatars-xmas-giveaway/128/batman_hero_avatar_comics-512.png"
     }
   },
   {
@@ -155,7 +159,8 @@
       "username": "exampleuser",
       "name": "Joe Example",
       "portfolio_url": "https://example.com/",
-      "bio": "Just an everyday Joe"
+      "bio": "Just an everyday Joe",
+      "avatar": "https://cdn4.iconfinder.com/data/icons/avatars-xmas-giveaway/128/batman_hero_avatar_comics-512.png"
     }
   },
   {
@@ -187,7 +192,8 @@
       "username": "exampleuser",
       "name": "Joe Example",
       "portfolio_url": "https://example.com/",
-      "bio": "Just an everyday Joe"
+      "bio": "Just an everyday Joe",
+      "avatar": "https://cdn4.iconfinder.com/data/icons/avatars-xmas-giveaway/128/batman_hero_avatar_comics-512.png"
     }
   },
   {
@@ -219,7 +225,8 @@
       "username": "exampleuser",
       "name": "Joe Example",
       "portfolio_url": "https://example.com/",
-      "bio": "Just an everyday Joe"
+      "bio": "Just an everyday Joe",
+      "avatar": "https://cdn4.iconfinder.com/data/icons/avatars-xmas-giveaway/128/batman_hero_avatar_comics-512.png"
     }
   },
   {
@@ -251,7 +258,8 @@
       "username": "exampleuser",
       "name": "Joe Example",
       "portfolio_url": "https://example.com/",
-      "bio": "Just an everyday Joe"
+      "bio": "Just an everyday Joe",
+      "avatar": "https://cdn4.iconfinder.com/data/icons/avatars-xmas-giveaway/128/batman_hero_avatar_comics-512.png"
     }
   },
   {
@@ -283,7 +291,8 @@
       "username": "exampleuser",
       "name": "Joe Example",
       "portfolio_url": "https://example.com/",
-      "bio": "Just an everyday Joe"
+      "bio": "Just an everyday Joe",
+      "avatar": "https://cdn4.iconfinder.com/data/icons/avatars-xmas-giveaway/128/batman_hero_avatar_comics-512.png"
     }
   },
   {
@@ -315,7 +324,8 @@
       "username": "exampleuser",
       "name": "Joe Example",
       "portfolio_url": "https://example.com/",
-      "bio": "Just an everyday Joe"
+      "bio": "Just an everyday Joe",
+      "avatar": "https://cdn4.iconfinder.com/data/icons/avatars-xmas-giveaway/128/batman_hero_avatar_comics-512.png"
     }
   }
 ]

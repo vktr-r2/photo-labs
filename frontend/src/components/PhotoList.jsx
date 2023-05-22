@@ -16,6 +16,9 @@ const PhotoList = (props) => {
         username={photo.user.username}
         imageSource={photo.urls.regular}
         description={photo.description}
+        avatar={photo.user.avatar}
+        city={photo.location.city}
+        country={photo.location.country}
         isFav={favPhotos[photo.id]} // Boolean indicating whether photo is favourited based on whether photo.id exists in favPhotos obj
         onFavClick={() => addFavPhoto(photo.id)} // Pass function with photo.id as arg to addFavPhoto
         onUnFavClick={() => removeFavPhoto(photo.id)} // Pass function with photo.id as arg to removeFavPhoto

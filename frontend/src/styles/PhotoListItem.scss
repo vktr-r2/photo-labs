@@ -34,17 +34,29 @@
   height: 40px;
 }
 
+.photo-list--details--parent{
+  display: flex;
+  margin-top: 10px;
+  margin-left: 5px;
+}
+
 .photo-list--user-details {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
 }
 
 .photo-list--user-info {
-  margin-top: 5px;
+  margin-top: 10px;
   font-weight: 700;
-  font-size: 12px;
-  margin-left: 8px;
+  font-size: 15px;
+  margin-left: 0px;
+  margin-bottom:0px;
+
 }
 
 .photo-list--user-location {
   color: #838383;
+  margin-top: 0px;
 }
