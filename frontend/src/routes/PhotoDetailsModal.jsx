@@ -22,6 +22,9 @@ export const PhotoDetailsModal = (props) => {
             username={photo.user.username}
             imageSource={photo.urls.thumb}
             description={photo.description}
+            avatar={photo.user.avatar}
+            city={photo.location.city}
+            country={photo.location.country}
             className=".photo-details-modal--images"
             isFav={favPhotos[photo.id]} // Boolean indicating whether photo is favorited based on whether photo.id exists in favPhotos obj
             onFavClick={() => addFavPhoto(photo.id)} // Pass function with photo.id as arg to addFavPhoto
@@ -74,7 +77,7 @@ export const PhotoDetailsModal = (props) => {
       />
       <img src={clickedPhoto.imageSource} alt={clickedPhoto.description} className="photo-details-modal--image"/>
       </div>
-      <h3 className=".photo-details-modal--header">Similar Photos</h3>
+      <h3 className="photo-details-modal--header">Similar Photos</h3>
       <PhotoList>{PhotoListComponentsArr}</PhotoList>
     </div>
   );
