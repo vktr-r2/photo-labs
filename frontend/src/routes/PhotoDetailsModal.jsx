@@ -7,7 +7,7 @@ import PhotoFavButton from "../components/PhotoFavButton";
 
 export const PhotoDetailsModal = (props) => {
 
-  const {onClose, clickedPhoto, photos, favPhotos, addFavPhoto, removeFavPhoto, onPhotoClick} = props;
+  const {onClose, clickedPhoto, photos, favPhotos, addFavPhoto, removeFavPhoto} = props;
 
 
   // console.log(clickedPhoto);  // TEST to see if component receiving clickedPhoto data >> WORKING
@@ -66,12 +66,14 @@ export const PhotoDetailsModal = (props) => {
           </defs>
         </svg>
       </button>
+      <div className="photo-details-modal--mainimage">
       <PhotoFavButton
         isFav={favPhotos[clickedPhoto.id]}
         onFavClick={() => addFavPhoto(clickedPhoto.id)}
         onUnFavClick={() => removeFavPhoto(clickedPhoto.id)}
       />
       <img src={clickedPhoto.imageSource} alt={clickedPhoto.description} className="photo-details-modal--image"/>
+      </div>
       <h3 className=".photo-details-modal--header">Similar Photos</h3>
       <PhotoList>{PhotoListComponentsArr}</PhotoList>
     </div>
