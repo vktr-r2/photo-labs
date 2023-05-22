@@ -9,7 +9,7 @@ import TopNavigation from "./components/TopNavigationBar";
 import HomeRoute from "./routes/HomeRoute";
 import PhotoDetailsModal from "./routes/PhotoDetailsModal";
 
-import useApplicationData from "./hooks/useAppData";
+import { ACTIONS, useApplicationData } from './hooks/useAppData';
 
 import "./App.scss";
 const App = () => {

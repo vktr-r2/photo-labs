@@ -24,7 +24,7 @@ const reducer = (state, action) => {
 
     //Case of ACTIONS.CLOSE_MODAL: return copy of state object, set showModal: false and clickedPhoto: NULL to empty stored photo data (so modal can be reopened on another photo)
     case ACTIONS.CLOSE_MODAL:
-      return { ...state, showModal: false, clickedPhoto: NULL };
+      return { ...state, showModal: false, clickedPhoto: null };
 
     //Case of ACTIONS.SET_CLICKED_PHOTO: return copy of state object, and set clickedPhoto property to equal value of action.payload.
     //actions (the arguement passed to reducer) are often defined as plain objects with a TYPE property and a PAYLOAD property. The type describes the kind of state change, and the payload field contains any data needed for the update.
@@ -50,7 +50,7 @@ const reducer = (state, action) => {
   }
 }
 
-const useApplicationData = () => {
+export const useApplicationData = () => {
   
   //initialState object stores the default state for all states
   const initialState = {
@@ -91,5 +91,14 @@ const useApplicationData = () => {
     dispatch({type: ACTIONS.REMOVE_FAV_PHOTO, payload: photoId});
   };
 
+  //Return current state along with dispatch functions
+  return {
+    ...state,
+    handlePhotoClick,
+    closeModal,
+    addFavPhoto,
+    removeFavPhoto
+  };
 
-}
+};
+
