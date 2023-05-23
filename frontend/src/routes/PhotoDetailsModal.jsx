@@ -9,11 +9,17 @@ export const PhotoDetailsModal = (props) => {
 
   const {onClose, clickedPhoto, photos, favPhotos, addFavPhoto, removeFavPhoto} = props;
 
+  //function uses clickedPhoto.id and photo data to return array of similar photos
+  const findSimilarPhotos = (id, photoDataArr) => {
+    const photoObj = photoDataArr.find(photo => photo.id === id);
+    return photoObj ? [...photoObj.similar_photos] : [];
+  };
 
-  // console.log(clickedPhoto);  // TEST to see if component receiving clickedPhoto data >> WORKING
-  // console.log("photos :", photos); // TEST to see if component receiving all photo data >> WORKING
+  //Assign return value of findSimilarPhotos
+  const similarPhotos = findSimilarPhotos(clickedPhoto.id, photos);
 
-  const PhotoListComponentsArr = Array.isArray(photos) && photos.map((photo) => {
+  //.map over similarPhotos array and use PhotoListItem component to display them in the modal
+  const PhotoListComponentsArr = Array.isArray(photos) && similarPhotos.map((photo) => {
     if (photo.id !== clickedPhoto.id) {    //if statement prevents clickedPhoto from populating the similar photos displayed
       return (
         <PhotoListItem
@@ -35,8 +41,6 @@ export const PhotoDetailsModal = (props) => {
 });
 
 
-  // console.log(PhotoListComponentsArr);
-  
   return (
     <div className="photo-details-modal">
       <button className="photo-details-modal--close-button" onClick={onClose}>
