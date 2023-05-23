@@ -155,6 +155,11 @@ useEffect(() => {
     dispatch({ type: ACTIONS.SET_TOPIC, payload: topicId });
   };
 
+  //rese topic state back to undefined to view unfiltered list of photos
+  const resetTopic = () => {
+    dispatch({ type: ACTIONS.SET_TOPIC, payload: undefined });
+};
+
   //Return current state along with dispatch functions
   return {
     ...state,
