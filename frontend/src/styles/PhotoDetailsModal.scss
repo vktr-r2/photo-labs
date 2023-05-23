@@ -58,6 +58,30 @@
   color: #1e1e1e;
   margin-top: 24px;
   margin-bottom: 24px;
-  margin-left: 15px;  //Not working for some reason
+  margin-left: 15px;
   width: 90%;
+}
+
+.photo-details-modal--info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  &--avatar {
+    object-fit: cover;
+    border-radius: 100%;
+    vertical-align: middle;
+    margin-right: 8px;
+    width: 40px;
+    height: 40px;
+  }
+
+  &--username {
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  &--location {
+    font-size: 14px;
+  }
 }
