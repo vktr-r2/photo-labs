@@ -1,6 +1,6 @@
-import React, { useReducer } from "react";
-import topics from "../mocks/topics.json";
-import photos from "../mocks/photos.json";
+import React, { useReducer, useEffect } from "react";
+// import topics from "../mocks/topics.json";
+// import photos from "../mocks/photos.json";
 
 //ACTIONS is object full of strings that help us pass instruction to dispatch function later on
 //Important to set these as strings in an object >> in case of typo JS will advise we're using an undefined constant, where as spelling out the string manually each time could make it hard to find a typo
@@ -57,12 +57,26 @@ export const useApplicationData = () => {
     showModal: false,
     clickedPhoto: null,
     favPhotos: {},
-    topicsData: topics,
-    photosData: photos
+    topicsData: [],
+    photosData: []
   };
 
   //Destructuring state, dispatch values from the array that useReducer returns
   const [state, dispatch] = useReducer(reducer,initialState);
+
+  useEffect(() => {
+    fetch('/api/topics')
+      .then(response => response.json())
+      .then(data => {
+        initialState.topicsData = data;
+      });
+
+    fetch('/api/photos')
+      .then(response => response.json())
+      .then(data => {
+        initialState.photosData = data;
+      });
+  }, []);
 
   //handlePhotoClick accepts photoProps as argument
   const handlePhotoClick = (photoProps) => {
