@@ -6,13 +6,13 @@ import TopicList from './TopicList';
 
 const TopNavigation = (props) => {
 
-  const {favPhotos, updateTopic} = props;
+  const {favPhotos, updateTopic, resetTopic} = props;
 
-  // console.log(props.topics); //confirmed topics array received 
+  
 
   return (
     <div className="top-nav-bar">
-      <span className="top-nav-bar--logo">PhotoLabs</span>
+      <span className="top-nav-bar--logo" onClick={resetTopic}>PhotoLabs</span>
 
       <div className="top-nav-bar--links">
       <TopicList topics={props.topics} updateTopic={updateTopic} />

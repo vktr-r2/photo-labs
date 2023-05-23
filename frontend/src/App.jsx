@@ -23,7 +23,8 @@ const App = () => {
     removeFavPhoto,
     topicsData,
     photosData,
-    updateTopic
+    updateTopic,
+    resetTopic
   } = useApplicationData();
 
   return (
@@ -42,6 +43,7 @@ const App = () => {
         addFavPhoto={addFavPhoto}
         removeFavPhoto={removeFavPhoto}
         updateTopic={updateTopic}
+        resetTopic={resetTopic}
       />
       {/*Conditional checks if showModal true, if true render modal*/}
       {showModal && (

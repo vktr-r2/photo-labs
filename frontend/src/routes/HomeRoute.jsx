@@ -12,12 +12,13 @@ const HomeRoute = (props) => {
     favPhotos,  //Object that passes list of favourited photos down to FavIcon
     addFavPhoto,  //Function that adds photo to favPhotos Obj
     removeFavPhoto, //Function that removes photo from favPhotos Obj
-    updateTopic
+    updateTopic, //Function captures topic ID for API call in useAppData.jsx
+    resetTopic  //Function resets the state of topic back to undefined to remove filter
   } = props;
 
   return (
     <div className="home-route">
-      <TopNavigation topics={topics} favPhotos={favPhotos} updateTopic={updateTopic} />
+      <TopNavigation topics={topics} favPhotos={favPhotos} updateTopic={updateTopic} resetTopic={resetTopic} />
       <PhotoList
         photos={photos}  
         favPhotos={favPhotos}
