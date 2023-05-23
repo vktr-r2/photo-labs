@@ -11,6 +11,7 @@ const TopicList = (props) => {
         label={topic.title}
         key={topic.id}
         className="topic-list--item"
+        onClick={() => props.updateTopic(topic.id)}
         />
         );
       });

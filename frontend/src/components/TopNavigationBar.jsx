@@ -6,7 +6,7 @@ import TopicList from './TopicList';
 
 const TopNavigation = (props) => {
 
-  const {favPhotos} = props;
+  const {favPhotos, updateTopic} = props;
 
   // console.log(props.topics); //confirmed topics array received 
 
@@ -15,7 +15,7 @@ const TopNavigation = (props) => {
       <span className="top-nav-bar--logo">PhotoLabs</span>
 
       <div className="top-nav-bar--links">
-      <TopicList topics={props.topics}/>
+      <TopicList topics={props.topics} updateTopic={updateTopic} />
       <FavBadge favPhotos={favPhotos}/>
       </div>
     </div>

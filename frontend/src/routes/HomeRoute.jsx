@@ -12,11 +12,12 @@ const HomeRoute = (props) => {
     favPhotos,  //Object that passes list of favourited photos down to FavIcon
     addFavPhoto,  //Function that adds photo to favPhotos Obj
     removeFavPhoto, //Function that removes photo from favPhotos Obj
+    updateTopic
   } = props;
 
   return (
     <div className="home-route">
-      <TopNavigation topics={topics} favPhotos={favPhotos} />
+      <TopNavigation topics={topics} favPhotos={favPhotos} updateTopic={updateTopic} />
       <PhotoList
         photos={photos}  
         favPhotos={favPhotos}
