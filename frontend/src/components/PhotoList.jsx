@@ -16,7 +16,7 @@ const PhotoList = (props) => {
         username={photo.user.username}
         imageSource={photo.urls.regular}
         description={photo.description}
-        avatar={photo.user.avatar}
+        avatar={photo.user.profile}
         city={photo.location.city}
         country={photo.location.country}
         isFav={favPhotos[photo.id]} // Boolean indicating whether photo is favourited based on whether photo.id exists in favPhotos obj
