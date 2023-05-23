@@ -43,7 +43,7 @@ export const PhotoDetailsModal = (props) => {
 
   return (
     <div className="photo-details-modal">
-      <button className="photo-details-modal--close-button" onClick={onClose}>
+    <button className="photo-details-modal--close-button" onClick={onClose}>
         <svg
           width="24"
           height="24"
@@ -80,10 +80,16 @@ export const PhotoDetailsModal = (props) => {
         onUnFavClick={() => removeFavPhoto(clickedPhoto.id)}
       />
       <img src={clickedPhoto.imageSource} alt={clickedPhoto.description} className="photo-details-modal--image"/>
-      </div>
-      <h3 className="photo-details-modal--header">Similar Photos</h3>
-      <PhotoList>{PhotoListComponentsArr}</PhotoList>
     </div>
+    {/* New information section */}
+    <div className="photo-details-modal--info">
+      <img src={clickedPhoto.avatar} alt={clickedPhoto.username} className="photo-list--user-profile"/>
+      <h2 className="photo-details-modal--username">{clickedPhoto.username}</h2>
+      <p className="photo-details-modal--location">{clickedPhoto.city}, {clickedPhoto.country}</p>
+    </div>
+    <h3 className="photo-details-modal--header">Similar Photos</h3>
+    <PhotoList>{PhotoListComponentsArr}</PhotoList>
+  </div>
   );
 };
 
