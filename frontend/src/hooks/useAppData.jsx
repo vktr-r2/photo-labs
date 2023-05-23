@@ -9,7 +9,8 @@ export const ACTIONS = {
   ADD_FAV_PHOTO: "ADD_FAV_PHOTO",
   REMOVE_FAV_PHOTO: "REMOVE_FAV_PHOTO",
   SET_TOPICS: "SET_TOPICS",
-  SET_PHOTOS: "SET_PHOTOS"
+  SET_PHOTOS: "SET_PHOTOS",
+  SET_TOPIC: "SET_TOPIC",
 };
 
 //Reducer takes the current state object as an arguement (object stores all different states for our app) and an action object as well, which is expected to have a "type" property.  "action" parameter describes the change we need to apply to the state
@@ -51,6 +52,10 @@ const reducer = (state, action) => {
       case ACTIONS.SET_PHOTOS:
         // In the case of ACTIONS.SET_PHOTOS, return a new state object that is a copy of the old state object, but photosData property is set to action.payload
         return {...state, photosData: action.payload};
+
+      case ACTIONS.SET_TOPIC:
+          //action.payload is the topicId of the clicked on topic in TopicListItem
+          return { ...state, topic: action.payload };
     
       //Catches all action.types that have not had cases defined for them above
     default:
@@ -66,7 +71,8 @@ export const useApplicationData = () => {
     clickedPhoto: null,
     favPhotos: {},
     topicsData: [],
-    photosData: []
+    photosData: [],
+    topic: undefined
   };
 
   //Destructuring state, dispatch values from the array that useReducer returns
