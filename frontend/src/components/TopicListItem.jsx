@@ -16,8 +16,3 @@ const TopicListItem = (props) => {
 
 export default TopicListItem
 
-// TopicListItem.defaultProps = {
-//   id: 1,
-//   label: 'Nature',
-//   link: 'link placeholder' 
-// }
