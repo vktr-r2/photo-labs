@@ -19,6 +19,11 @@
   margin-left: 24px;
 }
 
+.top-nav-bar--logo:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
 .top-nav-bar--links {
   display:flex;
   flex-direction: row;
