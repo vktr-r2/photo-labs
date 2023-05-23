@@ -20,9 +20,9 @@ export const PhotoDetailsModal = (props) => {
             id={photo.id}
             key={photo.id}
             username={photo.user.username}
-            imageSource={photo.urls.thumb}
+            imageSource={photo.urls.regular}
             description={photo.description}
-            avatar={photo.user.avatar}
+            avatar={photo.user.profile}
             city={photo.location.city}
             country={photo.location.country}
             className=".photo-details-modal--images"
