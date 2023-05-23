@@ -1,6 +1,4 @@
 import React, { useReducer, useEffect } from "react";
-// import topics from "../mocks/topics.json";
-// import photos from "../mocks/photos.json";
 
 //ACTIONS is object full of strings that help us pass instruction to dispatch function later on
 //Important to set these as strings in an object >> in case of typo JS will advise we're using an undefined constant, where as spelling out the string manually each time could make it hard to find a typo
@@ -10,6 +8,8 @@ export const ACTIONS = {
   SET_CLICKED_PHOTO: "SET_CLICKED_PHOTO",
   ADD_FAV_PHOTO: "ADD_FAV_PHOTO",
   REMOVE_FAV_PHOTO: "REMOVE_FAV_PHOTO",
+  SET_TOPICS: "SET_TOPICS",
+  SET_PHOTOS: "SET_PHOTOS"
 };
 
 //Reducer takes the current state object as an arguement (object stores all different states for our app) and an action object as well, which is expected to have a "type" property.  "action" parameter describes the change we need to apply to the state
@@ -43,6 +43,14 @@ const reducer = (state, action) => {
       delete updatedFavPhotos[action.payload];
       //Return a copy of the current state object, and set favPhotos object within it to equal new updatedFavPhotos
       return {...state, favPhotos: updatedFavPhotos}
+
+      case ACTIONS.SET_TOPICS:
+        // In the case of ACTIONS.SET_TOPICS, return a new state object that is a copy of the old state object, but topicsData property is set to action.payload
+        return {...state, topicsData: action.payload};
+  
+      case ACTIONS.SET_PHOTOS:
+        // In the case of ACTIONS.SET_PHOTOS, return a new state object that is a copy of the old state object, but photosData property is set to action.payload
+        return {...state, photosData: action.payload};
     
       //Catches all action.types that have not had cases defined for them above
     default:
@@ -64,19 +72,33 @@ export const useApplicationData = () => {
   //Destructuring state, dispatch values from the array that useReducer returns
   const [state, dispatch] = useReducer(reducer,initialState);
 
-  useEffect(() => {
-    fetch('/api/topics')
-      .then(response => response.json())
-      .then(data => {
-        initialState.topicsData = data;
-      });
+// useEffect makes two separate fetch calls after page loads
+useEffect(() => {
+  fetch('/api/topics')
+    // parse JSON response received
+    .then(response => response.json())
+    // data = the parsed JSON response
+    .then(data => {
+      // Use dispatch to update the state properly
+      dispatch({ type: ACTIONS.SET_TOPICS, payload: data });
+    })
+    // Catch any errors and log them
+    .catch(error => {
+      console.error('Error fetching topics:', error);
+    });
 
-    fetch('/api/photos')
-      .then(response => response.json())
-      .then(data => {
-        initialState.photosData = data;
-      });
-  }, []);
+  fetch('/api/photos')
+    .then(response => response.json())
+    .then(data => {
+      // Use dispatch to update the state properly
+      dispatch({ type: ACTIONS.SET_PHOTOS, payload: data });
+    })
+    // Catch any errors and log them
+    .catch(error => {
+      console.error('Error fetching photos:', error);
+    });
+}, []);
+
 
   //handlePhotoClick accepts photoProps as argument
   const handlePhotoClick = (photoProps) => {
