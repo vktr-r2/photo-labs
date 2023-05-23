@@ -78,7 +78,7 @@ export const useApplicationData = () => {
   //Destructuring state, dispatch values from the array that useReducer returns
   const [state, dispatch] = useReducer(reducer,initialState);
 
-// useEffect makes two separate fetch calls after page loads
+// useEffect makes two separate fetch calls after page loads (Happens once)
 useEffect(() => {
   fetch('/api/topics')
     // parse JSON response received
@@ -104,6 +104,22 @@ useEffect(() => {
       console.error('Error fetching photos:', error);
     });
 }, []);
+
+//useEffect calls results API each time state.topic value changes
+useEffect(() => {
+  //if state.topic is truthy, make fetch call
+  if (state.topic) {
+    fetch(`http://localhost:8001/api/topics/photos/${state.topic}`)
+      .then(response => response.json())
+      .then(data => {
+        //dispatch will set SET_PHOTOS state to equal just the photos tied to the topic id
+        dispatch({ type: ACTIONS.SET_PHOTOS, payload: data });
+      })
+      .catch(error => {
+        console.error(`Error fetching photos for topic ${state.topic}:`, error);
+      });
+  }
+}, [state.topic]);
 
 
   //handlePhotoClick accepts photoProps as argument
@@ -133,13 +149,20 @@ useEffect(() => {
     dispatch({type: ACTIONS.REMOVE_FAV_PHOTO, payload: photoId});
   };
 
+  //accepts topicId from props passed up from TopicListItem is clicked
+  const updateTopic = (topicId) => {
+    //SET_TOPIC deletes 
+    dispatch({ type: ACTIONS.SET_TOPIC, payload: topicId });
+  };
+
   //Return current state along with dispatch functions
   return {
     ...state,
     handlePhotoClick,
     closeModal,
     addFavPhoto,
-    removeFavPhoto
+    removeFavPhoto,
+    updateTopic
   };
 
 };
