@@ -9,7 +9,7 @@ import TopNavigation from "./components/TopNavigationBar";
 import HomeRoute from "./routes/HomeRoute";
 import PhotoDetailsModal from "./routes/PhotoDetailsModal";
 
-import { ACTIONS, useApplicationData } from './hooks/useAppData';
+import { ACTIONS, useApplicationData } from "./hooks/useAppData";
 
 import "./App.scss";
 const App = () => {
@@ -24,17 +24,11 @@ const App = () => {
     topicsData,
     photosData,
     updateTopic,
-    resetTopic
+    resetTopic,
   } = useApplicationData();
 
   return (
     <div className="App">
-      {/* <PhotoListItem/> */}
-      {/* <PhotoFavButton/> */}
-      {/* <TopicListItem/> */}
-      {/* <TopicList/> */}
-      {/* <TopNavigation/> */}
-      {/* <PhotoList/> */}
       <HomeRoute
         topics={topicsData}
         photos={photosData}
@@ -45,7 +39,6 @@ const App = () => {
         updateTopic={updateTopic}
         resetTopic={resetTopic}
       />
-      {/*Conditional checks if showModal true, if true render modal*/}
       {showModal && (
         <PhotoDetailsModal
           clickedPhoto={clickedPhoto}

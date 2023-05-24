@@ -12,12 +12,12 @@ const TopicList = (props) => {
         key={topic.id}
         className="topic-list--item"
         onClick={() => props.updateTopic(topic.id)}
-        />
-        );
-      });
-      return <div className="top-nav-bar--topic-list" >{TopicListComponentsArr}</div>;
-    };
-    
-    export default TopicList;
+      />
+    );
+  });
+  return (
+    <div className="top-nav-bar--topic-list">{TopicListComponentsArr}</div>
+  );
+};
 
-
+export default TopicList;
