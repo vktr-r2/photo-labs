@@ -6,7 +6,11 @@ The project was primarily focused on introducing us to front-end dynamic websit 
 
 ## Screenshots
 
+![PhotoLabs - HomeRoute View](https://github.com/vktr-r2/photo-lab/blob/main/docs/PhotoLabs%20-%20%20HomeRoute%20View.png?raw=true)
 
+![PhotoLabs - Modal View](https://github.com/vktr-r2/photo-lab/blob/main/docs/PhotoLabs%20-%20Modal%20View.png?raw=true)
+
+![PhotoLabs - Topics View](https://github.com/vktr-r2/photo-lab/blob/main/docs/PhotoLabs%20-%20Topics%20View.png?raw=true)
 
 
 
