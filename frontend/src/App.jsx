@@ -1,15 +1,9 @@
 import React, { useState } from "react";
 
-import PhotoListItem from "./components/PhotoListItem";
-import PhotoList from "./components/PhotoList";
-import PhotoFavButton from "./components/PhotoFavButton";
-import TopicListItem from "./components/TopicListItem";
-import TopicList from "./components/TopicList";
-import TopNavigation from "./components/TopNavigationBar";
 import HomeRoute from "./routes/HomeRoute";
 import PhotoDetailsModal from "./routes/PhotoDetailsModal";
 
-import { ACTIONS, useApplicationData } from "./hooks/useAppData";
+import { useApplicationData } from "./hooks/useAppData";
 
 import "./App.scss";
 const App = () => {
