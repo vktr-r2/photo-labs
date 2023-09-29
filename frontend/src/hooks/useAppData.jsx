@@ -10,6 +10,7 @@ export const useApplicationData = () => {
     topicsData: [],
     photosData: [],
     topic: undefined,
+    showFavOnly: false,
   };
 
   //Destructuring state, dispatch values from the array that useReducer returns
@@ -89,6 +90,11 @@ export const useApplicationData = () => {
     dispatch({ type: ACTIONS.SET_TOPIC, payload: undefined });
   };
 
+  // toggles whether PhotoList should filter favs or not
+  const toggleShowFavOnly = () => {
+    dispatch({ type: ACTIONS.TOGGLE_SHOW_FAV_ONLY });
+  };
+
   //Return current state along with dispatch functions
   return {
     ...state,
@@ -98,5 +104,6 @@ export const useApplicationData = () => {
     removeFavPhoto,
     updateTopic,
     resetTopic,
+    toggleShowFavOnly,
   };
 };
