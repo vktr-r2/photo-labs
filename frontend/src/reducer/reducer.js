@@ -7,13 +7,13 @@ export const ACTIONS = {
   SET_TOPICS: "SET_TOPICS",
   SET_PHOTOS: "SET_PHOTOS",
   SET_TOPIC: "SET_TOPIC",
+  TOGGLE_SHOW_FAV_ONLY: "TOGGLE_SHOW_FAV_ONLY",
 };
 
 //Reducer takes current state object as arg and action object as well. Action parameter describes the change we need to apply to the state
 export const reducer = (state, action) => {
   //Switch/case statement checks value of action.type property, and will return what changes need to be applied to the state object
   switch (action.type) {
-
     //ACTIONS.SHOW_MODAL: showModal property is set to TRUE to trigger modal render
     case ACTIONS.SHOW_MODAL:
       return { ...state, showModal: true };
@@ -52,6 +52,10 @@ export const reducer = (state, action) => {
     case ACTIONS.SET_TOPIC:
       //ACTIONS.SET_TOPIC: triggers API call to bring in photos filtered by a specific topic by capturing topic id on click
       return { ...state, topic: action.payload };
+
+    case ACTIONS.TOGGLE_SHOW_FAV_ONLY:
+      // ACTIONS.TOGGLE_SHOW_FAV_ONLY: toggles PhotoList to only show favourited photos
+      return { ...state, showFavOnly: !state.showFavOnly };
 
     //Catches all action.types that have not had cases defined for them above
     default:
