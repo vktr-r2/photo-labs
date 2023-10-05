@@ -81,7 +81,7 @@ export const useApplicationData = () => {
 
   //accepts topicId from props passed up from TopicListItem is clicked
   const updateTopic = (topicId) => {
-    //SET_TOPIC deletes
+    //SET_TOPIC sets topic state to topicId
     dispatch({ type: ACTIONS.SET_TOPIC, payload: topicId });
   };
 
