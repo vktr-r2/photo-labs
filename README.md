@@ -59,3 +59,17 @@ Once the app has launched you can do the following:
     "pg": "^8.5.0",
     "socket.io": "^2.2.0",
     "ws": "^7.0.0"
+
+
+
+## TO DO:
+
+- Reset both category and favourite state with PhotoLabs navbar button
+- Make PhotoLabs navbar button look more clickable
+- Make category and fav buttons look more clickable
+- Make category and fav buttons clearly show that they're still enabled
+- Ability to upload a photo
+- Upgrade state management to Redux or Context
+- Double check app isn't rendering more than it needs to
+- Stop browser refresh from resetting state
+- Best practises
