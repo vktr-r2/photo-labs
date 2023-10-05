@@ -68,8 +68,9 @@ Once the app has launched you can do the following:
 - Make PhotoLabs navbar button look more clickable
 - Make category and fav buttons look more clickable
 - Make category and fav buttons clearly show that they're still enabled
-- Ability to upload a photo
+- Make navbar styling more dynamic based on width
 - Upgrade state management to Redux or Context
+- Build testing
 - Double check app isn't rendering more than it needs to
 - Stop browser refresh from resetting state
 - Best practises
