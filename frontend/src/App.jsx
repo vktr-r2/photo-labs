@@ -19,6 +19,9 @@ const App = () => {
     photosData,
     updateTopic,
     resetTopic,
+    showFavOnly,
+    toggleShowFavOnly,
+    
   } = useApplicationData();
 
   return (
@@ -32,6 +35,8 @@ const App = () => {
         removeFavPhoto={removeFavPhoto}
         updateTopic={updateTopic}
         resetTopic={resetTopic}
+        showFavOnly={showFavOnly}
+        toggleShowFavOnly={toggleShowFavOnly}
       />
       {showModal && (
         <PhotoDetailsModal
