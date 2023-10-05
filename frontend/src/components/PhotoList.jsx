@@ -5,14 +5,14 @@ import PhotoListItem from "./PhotoListItem";
 
 const PhotoList = (props) => {
   //Receive photos data, favPhotos state, and add/removeFavPhoto update functions as props from HomeRoute parent
-  const { photos, favPhotos, addFavPhoto, removeFavPhoto, onPhotoClick } =
+  const { photos, favPhotos, showFavOnly, addFavPhoto, removeFavPhoto, onPhotoClick } =
     props;
 
   //Declare new PhotoListComponentsArr, check if "photos" is array, if true then use .map to create each PhotoListItem component
   const PhotoListComponentsArr =
     Array.isArray(photos) &&
     photos
-      .filter((photo) => !props.showFavOnly || props.favPhotos[photo.id])
+      .filter((photo) => !showFavOnly || favPhotos[photo.id])
       .map((photo) => {
         return (
           <PhotoListItem
