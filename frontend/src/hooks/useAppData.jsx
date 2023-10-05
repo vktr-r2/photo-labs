@@ -1,4 +1,4 @@
-import React, { useReducer, useEffect } from "react";
+import { useReducer, useEffect } from "react";
 import { reducer, ACTIONS } from "../reducer/reducer";
 
 export const useApplicationData = () => {
@@ -92,7 +92,7 @@ export const useApplicationData = () => {
 
   // toggles whether PhotoList should filter favs or not
   const toggleShowFavOnly = () => {
-    dispatch({ type: ACTIONS.TOGGLE_SHOW_FAV_ONLY });
+    dispatch({ type: ACTIONS.TOGGLE_SHOW_FAV_ONLY});
   };
 
   //Return current state along with dispatch functions
