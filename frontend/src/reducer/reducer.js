@@ -55,7 +55,7 @@ export const reducer = (state, action) => {
 
     case ACTIONS.TOGGLE_SHOW_FAV_ONLY:
       // ACTIONS.TOGGLE_SHOW_FAV_ONLY: toggles PhotoList to only show favourited photos
-      return { ...state, showFavOnly: !state.showFavOnly };
+      return { ...state, showFavOnly: action.payload };
 
     //Catches all action.types that have not had cases defined for them above
     default:

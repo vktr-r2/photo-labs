@@ -86,13 +86,14 @@ export const useApplicationData = () => {
   };
 
   //rese topic state back to undefined to view unfiltered list of photos
-  const resetTopic = () => {
+  const resetFilters = () => {
     dispatch({ type: ACTIONS.SET_TOPIC, payload: undefined });
+    dispatch({ type: ACTIONS.TOGGLE_SHOW_FAV_ONLY, payload: false });
   };
 
   // toggles whether PhotoList should filter favs or not
   const toggleShowFavOnly = () => {
-    dispatch({ type: ACTIONS.TOGGLE_SHOW_FAV_ONLY});
+    dispatch({ type: ACTIONS.TOGGLE_SHOW_FAV_ONLY, payload: !state.showFavOnly });
   };
 
   //Return current state along with dispatch functions
@@ -103,7 +104,7 @@ export const useApplicationData = () => {
     addFavPhoto,
     removeFavPhoto,
     updateTopic,
-    resetTopic,
+    resetTopic: resetFilters,
     toggleShowFavOnly,
   };
 };
