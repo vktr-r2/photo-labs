@@ -62,15 +62,25 @@ Once the app has launched you can do the following:
 
 
 
-## TO DO:
+## TO DO AFTER BOOTCAMP:
 
-- Reset both category and favourite state with PhotoLabs navbar button
-- Make PhotoLabs navbar button look more clickable
-- Make category and fav buttons look more clickable
-- Make category and fav buttons clearly show that they're still enabled
-- Make navbar styling more dynamic based on width
-- Upgrade state management to Redux or Context
-- Build testing
-- Double check app isn't rendering more than it needs to
-- Stop browser refresh from resetting state
-- Best practises
+#### performance and scalability
+- () Photo filter restructure
+    - () Move initial API axios call to backend
+    - () Call photo data to frontend using axois
+    - () Update PhotoList filter flow
+- () Upgrade state management to Redux or Context
+- () Build testing
+- () Double check app isn't rendering more than it needs to
+- () Stop browser refresh from resetting state
+- () Best practises
+
+#### feature/advanced-filtering
+- (DONE) Reset both category and favourite state with PhotoLabs navbar button
+- (DONE) Ability to filter for favs + category at one time
+- () Handle if no favs are available
+
+#### navbar-usability
+- () Make PhotoLabs navbar button look more clickable and indicate state
+- () Make category and fav buttons look more clickable and indicate state
+- () Make navbar styling more dynamic based on width
