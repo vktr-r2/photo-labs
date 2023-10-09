@@ -4,14 +4,15 @@ import "../styles/TopicList.scss";
 import TopicListItem from "./TopicListItem";
 
 const TopicList = (props) => {
-  const TopicListComponentsArr = props.topics.map((topic) => {
+  const {topics, updateTopic, currentTopic} = props;
+  const TopicListComponentsArr = topics.map((topic) => {
     return (
       <TopicListItem
         link={topic.link}
         label={topic.title}
         key={topic.id}
-        className="topic-list--item"
-        onClick={() => props.updateTopic(topic.id)}
+        currentTopic={currentTopic}
+        onClick={() => updateTopic(topic.id)}
       />
     );
   });

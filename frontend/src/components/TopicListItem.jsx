@@ -3,7 +3,7 @@ import React from "react";
 import "../styles/TopicListItem.scss";
 
 const TopicListItem = (props) => {
-  const { id, label, link, onClick } = props;
+  const { id, label, link, onClick, currentTopic } = props;
 
   const handleClick = (event) => {
     event.preventDefault(); // prevent the link from navigating away
@@ -15,7 +15,7 @@ const TopicListItem = (props) => {
       <a
         href={link}
         key={id}
-        className="topic-list--item-link"
+        //className={label === currentTopic? className="topic-list--item-link" : className="topic-list--item-link--active"}
         onClick={handleClick}
       >
         <span>{label}</span>
