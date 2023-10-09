@@ -12,6 +12,7 @@ const HomeRoute = (props) => {
     favPhotos, //Object that passes list of favourited photos down to FavIcon
     addFavPhoto, //Function that adds photo to favPhotos Obj
     removeFavPhoto, //Function that removes photo from favPhotos Obj
+    currentTopic,  //State manages current topic selected
     updateTopic, //Function captures topic ID for API call in useAppData.jsx
     resetTopic, //Function resets the state of topic back to undefined to remove filter
     showFavOnly, //State manages favourites filter
@@ -23,6 +24,7 @@ const HomeRoute = (props) => {
       <TopNavigation
         topics={topics}
         favPhotos={favPhotos}
+        currentTopic={currentTopic}
         updateTopic={updateTopic}
         resetTopic={resetTopic}
         toggleShowFavOnly={toggleShowFavOnly}
@@ -34,6 +36,7 @@ const HomeRoute = (props) => {
         removeFavPhoto={removeFavPhoto}
         onPhotoClick={onPhotoClick}
         showFavOnly={showFavOnly}
+        currentTopic={currentTopic}
       />
     </div>
   );

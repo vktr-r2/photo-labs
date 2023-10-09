@@ -5,7 +5,13 @@ import FavBadge from "./FavBadge";
 import TopicList from "./TopicList";
 
 const TopNavigation = (props) => {
-  const { favPhotos, toggleShowFavOnly, updateTopic, resetTopic } = props;
+  const {
+    favPhotos,
+    toggleShowFavOnly,
+    updateTopic,
+    resetTopic,
+    currentTopic,
+  } = props;
 
   return (
     <div className="top-nav-bar">
@@ -15,7 +21,7 @@ const TopNavigation = (props) => {
 
       <div className="top-nav-bar--links">
         <TopicList topics={props.topics} updateTopic={updateTopic} />
-        <FavBadge favPhotos={favPhotos} onClick={toggleShowFavOnly}/>
+        <FavBadge favPhotos={favPhotos} onClick={toggleShowFavOnly} />
       </div>
     </div>
   );

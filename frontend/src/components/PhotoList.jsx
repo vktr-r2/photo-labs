@@ -13,6 +13,7 @@ const PhotoList = (props) => {
     addFavPhoto,
     removeFavPhoto,
     onPhotoClick,
+    currentTopic,
   } = props;
 
   // Declare a variable to hold the content that will be displayed.
