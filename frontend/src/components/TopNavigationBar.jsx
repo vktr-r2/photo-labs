@@ -10,13 +10,13 @@ const TopNavigation = (props) => {
     toggleShowFavOnly,
     topics,
     updateTopic,
-    resetTopic,
+    resetFilters,
     currentTopic,
   } = props;
 
   return (
     <div className="top-nav-bar">
-      <span className="top-nav-bar--logo" onClick={resetTopic}>
+      <span className="top-nav-bar--logo" onClick={resetFilters}>
         PhotoLabs
       </span>
 
