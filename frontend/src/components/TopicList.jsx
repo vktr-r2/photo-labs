@@ -11,6 +11,7 @@ const TopicList = (props) => {
         link={topic.link}
         label={topic.title}
         key={topic.id}
+        id={topic.id}
         currentTopic={currentTopic}
         onClick={() => updateTopic(topic.id)}
       />
