@@ -15,7 +15,7 @@ const TopicListItem = (props) => {
       <a
         href={link}
         key={id}
-        //className={label === currentTopic? className="topic-list--item-link" : className="topic-list--item-link--active"}
+        className={label === currentTopic ? "topic-list--item-link--active" : "topic-list--item-link" }
         onClick={handleClick}
       >
         <span>{label}</span>
