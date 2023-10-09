@@ -9,7 +9,7 @@ export const useApplicationData = () => {
     favPhotos: {},
     topicsData: [],
     photosData: [],
-    topic: undefined,
+    currentTopic: undefined,
     showFavOnly: false,
   };
 
