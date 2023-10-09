@@ -25,10 +25,4 @@
 .top-nav-bar--links {
   display:flex;
   flex-direction: row;
-  cursor: pointer;
-}
-
-.top-nav-bar--links:hover {
-  cursor: pointer;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
