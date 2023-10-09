@@ -78,9 +78,11 @@ Once the app has launched you can do the following:
 #### feature/advanced-filtering
 - (DONE) Reset both category and favourite state with PhotoLabs navbar button
 - (DONE) Ability to filter for favs + category at one time
-- () Handle if no favs are available
+- (DONE) Handle if no favs are available
+- () BUG: no favs page shows for split second while async API calls made >> show loading icon instead
 
 #### navbar-usability
 - () Make PhotoLabs navbar button look more clickable and indicate state
 - () Make category and fav buttons look more clickable and indicate state
+- () BUG: add hover styling back to favIcon in navbar
 - () Make navbar styling more dynamic based on width
