@@ -22,8 +22,8 @@ export const useApplicationData = () => {
     let url = "/api/photos";
 
     //If state topic is not undefined, then set URL to lead to topic photo content
-    if (state.topic !== undefined) {
-      url = `http://localhost:8001/api/topics/photos/${state.topic}`;
+    if (state.currentTopic !== undefined) {
+      url = `http://localhost:8001/api/topics/photos/${state.currentTopic}`;
     }
 
     fetch("/api/topics")
@@ -50,7 +50,7 @@ export const useApplicationData = () => {
         console.error("Error fetching photos:", error);
       });
     //if state.topic dependancy changes, call useEffect again
-  }, [state.topic]);
+  }, [state.currentTopic]);
 
   //handlePhotoClick accepts photoProps as argument
   const handlePhotoClick = (photoProps) => {
@@ -104,7 +104,7 @@ export const useApplicationData = () => {
     addFavPhoto,
     removeFavPhoto,
     updateTopic,
-    resetTopic: resetFilters,
+    resetFilters,
     toggleShowFavOnly,
   };
 };
