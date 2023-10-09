@@ -51,7 +51,7 @@ export const reducer = (state, action) => {
 
     case ACTIONS.SET_TOPIC:
       //ACTIONS.SET_TOPIC: triggers API call to bring in photos filtered by a specific topic by capturing topic id on click
-      return { ...state, topic: action.payload };
+      return { ...state, currentTopic: action.payload };
 
     case ACTIONS.TOGGLE_SHOW_FAV_ONLY:
       // ACTIONS.TOGGLE_SHOW_FAV_ONLY: toggles PhotoList to only show favourited photos
