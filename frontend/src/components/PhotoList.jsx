@@ -3,6 +3,8 @@ import React from "react";
 import "../styles/PhotoList.scss";
 import PhotoListItem from "./PhotoListItem";
 
+import brokenHeart from "../assets/image-from-rawpixel-id-3854883-png.png";
+
 const PhotoList = (props) => {
   const {
     photos,
@@ -24,7 +26,16 @@ const PhotoList = (props) => {
     // Check if filteredPhotos array is empty
     filteredPhotos.length === 0
       ? // Advise user no fav photos found for filter
-        (photosToDisplay = <div className="photo-list-empty">No favourites here yet ...</div>)
+        (photosToDisplay = (
+          <div className="photo-list-empty">
+            <img className="photo-list-empty-icon" src={brokenHeart} alt="Broken heart icon" />
+            <p className="photo-list-empty-text">
+              Oh no!
+            </p>
+            <p className="photo-list-empty-text">You have no favourites here yet ...</p>
+            <p className="photo-list-empty-attrib">Image by rawpixel.com</p>
+          </div>
+        ))
       : // If there are photos, map them to PhotoListItem components
         (photosToDisplay = filteredPhotos.map((photo) => {
           return (

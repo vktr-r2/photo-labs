@@ -6,5 +6,30 @@
   justify-content: space-around;
   list-style-type: none;
   margin: 0;
-  padding: 2%;
+  padding: 1%;
+}
+
+.photo-list-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 40%;
+  max-height: 40%;
+}
+
+.photo-list-empty-icon {
+  max-width: 60%;
+  max-height: 60%;
+}
+
+.photo-list-empty-text {
+  font-family: 'Brush Script MT', cursive;
+  font-size: 2em;
+  margin: 0;
+}
+
+.photo-list-empty-attrib {
+  font-size: xx-small;
+  position: absolute;
+  bottom: 0;
 }
