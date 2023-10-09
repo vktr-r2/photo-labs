@@ -10,12 +10,13 @@ const TopicListItem = (props) => {
     onClick(); // call the click handler passed in props
   };
 
+  console.log(`key=${link} | currentTopic state=${currentTopic}`)
   return (
     <div className="topic-list--item">
       <a
         href={link}
         key={id}
-        className={label === currentTopic ? "topic-list--item-link--active" : "topic-list--item-link" }
+        className={id === currentTopic ? "topic-list--item-link--active" : "topic-list--item-link" }
         onClick={handleClick}
       >
         <span>{label}</span>
