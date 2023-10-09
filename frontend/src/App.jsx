@@ -19,7 +19,7 @@ const App = () => {
     photosData,
     currentTopic,
     updateTopic,
-    resetTopic,
+    resetFilters,
     showFavOnly,
     toggleShowFavOnly,
     
@@ -36,7 +36,7 @@ const App = () => {
         removeFavPhoto={removeFavPhoto}
         currentTopic={currentTopic}
         updateTopic={updateTopic}
-        resetTopic={resetTopic}
+        resetFilters={resetFilters}
         showFavOnly={showFavOnly}
         toggleShowFavOnly={toggleShowFavOnly}
       />

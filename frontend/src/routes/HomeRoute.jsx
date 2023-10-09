@@ -14,7 +14,7 @@ const HomeRoute = (props) => {
     removeFavPhoto, //Function that removes photo from favPhotos Obj
     currentTopic,  //State manages current topic selected
     updateTopic, //Function captures topic ID for API call in useAppData.jsx
-    resetTopic, //Function resets the state of topic back to undefined to remove filter
+    resetFilters, //Function resets the state of topic back to undefined to remove filter
     showFavOnly, //State manages favourites filter
     toggleShowFavOnly, //Function toggles showFavOnly state on/off
   } = props;
@@ -26,7 +26,7 @@ const HomeRoute = (props) => {
         favPhotos={favPhotos}
         currentTopic={currentTopic}
         updateTopic={updateTopic}
-        resetTopic={resetTopic}
+        resetFilters={resetFilters}
         toggleShowFavOnly={toggleShowFavOnly}
       />
       <PhotoList
