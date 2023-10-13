@@ -13,7 +13,10 @@ const TopicList = (props) => {
         key={topic.id}
         id={topic.id}
         currentTopic={currentTopic}
-        onClick={() => updateTopic(topic.id)}
+        onClick={
+          // If same topic is clicked, reset topic to undefined : if new topic is clicked, set topic to topic.id
+          currentTopic === topic.id? () => updateTopic(undefined) : () => updateTopic(topic.id)
+        }
       />
     );
   });
