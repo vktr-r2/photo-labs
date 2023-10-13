@@ -26,3 +26,16 @@
   display:flex;
   flex-direction: row;
 }
+
+.top-nav-bar-fav:hover {
+    cursor: pointer;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
+}
+
+.top-nav-bar-fav--active {
+  cursor: pointer;
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+  border-bottom-color: #2b2b2b;
+}
