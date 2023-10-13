@@ -10,7 +10,6 @@ const TopicListItem = (props) => {
     onClick(); // call the click handler passed in props
   };
 
-  console.log(`key=${link} | currentTopic state=${currentTopic}`)
   return (
     <div className="topic-list--item">
       <a
