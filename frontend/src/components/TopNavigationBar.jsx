@@ -9,6 +9,7 @@ const TopNavigation = (props) => {
     favPhotos,
     toggleShowFavOnly,
     topics,
+    showFavOnly,
     updateTopic,
     resetFilters,
     currentTopic,
@@ -21,8 +22,18 @@ const TopNavigation = (props) => {
       </span>
 
       <div className="top-nav-bar--links">
-        <TopicList topics={topics} updateTopic={updateTopic} currentTopic={currentTopic} />
-        <FavBadge favPhotos={favPhotos} onClick={toggleShowFavOnly} />
+        <TopicList
+          topics={topics}
+          updateTopic={updateTopic}
+          currentTopic={currentTopic}
+        />
+        <div
+          className={
+            showFavOnly ? "top-nav-bar-fav--active" : "top-nav-bar-fav"
+          }
+        >
+          <FavBadge favPhotos={favPhotos} onClick={toggleShowFavOnly} />
+        </div>
       </div>
     </div>
   );
