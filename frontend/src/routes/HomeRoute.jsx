@@ -24,6 +24,7 @@ const HomeRoute = (props) => {
       <TopNavigation
         topics={topics}
         favPhotos={favPhotos}
+        showFavOnly={showFavOnly}
         currentTopic={currentTopic}
         updateTopic={updateTopic}
         resetFilters={resetFilters}
