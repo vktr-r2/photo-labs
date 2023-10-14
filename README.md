@@ -80,11 +80,11 @@ Once the app has launched you can do the following:
 - (DONE) Ability to filter for favs + category at one time
 - (DONE) Handle if no favs are available
 - (DONE) When category is active and clicked, deactivate it
-- () BUG: no favs page shows for split second while async API calls made >> show loading icon instead
+- (DONE) BUG: no favs messaging shows for split second while async API calls made
 
 #### navbar-usability
-- () Make PhotoLabs navbar button look more clickable and indicate state
+- (DONE) Make PhotoLabs navbar button look more clickable and indicate state
 - (DONE) Make category buttons look more clickable and indicate state
-- (PENDING) Make category and fav button look more clickable and indicate state
-- () BUG: add hover styling back to favIcon in navbar
+- (DONE) Make category and fav button look more clickable and indicate state
+- (DONE) BUG: add hover styling back to favIcon in navbar
 - () Make navbar styling more dynamic based on width
