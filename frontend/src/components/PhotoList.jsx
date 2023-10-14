@@ -13,7 +13,6 @@ const PhotoList = (props) => {
     addFavPhoto,
     removeFavPhoto,
     onPhotoClick,
-    currentTopic,
   } = props;
 
   // Declare a variable to hold the content that will be displayed.
@@ -24,8 +23,8 @@ const PhotoList = (props) => {
       (photo) => !showFavOnly || favPhotos[photo.id]
     );
 
-    // Check if filteredPhotos array is empty
-    filteredPhotos.length === 0
+    // Check if filteredPhotos array is empty and showFavOnly is true
+    filteredPhotos.length === 0  && showFavOnly === true
       ? // Advise user no fav photos found for filter
         (photosToDisplay = (
           <div className="photo-list-empty">
